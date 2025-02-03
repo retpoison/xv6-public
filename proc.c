@@ -576,6 +576,14 @@ rinit(void)
 	initlock(&randomst.lock, "randomst");
 }
 
+void
+setseed(int seed)
+{
+	acquire(&randomst.lock);
+	randomst.next = seed;
+	release(&randomst.lock);
+}
+
 int
 random(void)
 {

@@ -19,6 +19,17 @@ main(void)
 	dup(0);			// stdout
 	dup(0);			// stderr
 
+	printf(1, "init: init randinit\n");
+	pid = fork();
+	if (pid < 0)
+		printf(1, "init: fork failed\n");
+	if (pid == 0) {
+		exec("randinit", argv);
+		printf(1, "init: exec randinit failed\n");
+	}
+	while ((wpid = wait()) >= 0 && wpid != pid)
+		printf(1, "zombie!\n");
+
 	for (;;) {
 		printf(1, "init: starting sh\n");
 		pid = fork();

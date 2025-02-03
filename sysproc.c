@@ -107,6 +107,17 @@ sys_halt(void)
 }
 
 int
+sys_setseed(void)
+{
+	int seed;
+
+	if (argint(0, &seed) < 0)
+		return -1;
+	setseed(seed);
+	return 0;
+}
+
+int
 sys_random(void)
 {
 	return random();

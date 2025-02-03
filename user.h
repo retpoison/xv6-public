@@ -27,6 +27,7 @@ int pname(void);
 int addreadcount(void);
 int getreadcount(void);
 void halt(void);
+void setseed(unsigned long int);
 int random(void);
 
 // ulib.c

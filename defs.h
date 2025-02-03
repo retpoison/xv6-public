@@ -124,6 +124,7 @@ void wakeup(void *);
 void yield(void);
 int pname(void);
 void rinit(void);
+void setseed(int);
 int random(void);
 
 // swtch.S
@@ -192,6 +193,7 @@ int copyout(pde_t *, uint, void *, uint);
 void clearpteu(pde_t * pgdir, char *uva);
 
 // random.c
+void randinit(void);
 int rand(void);
 
 // number of elements in fixed-size array

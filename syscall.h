@@ -24,4 +24,5 @@
 #define SYS_addreadcount 23
 #define SYS_getreadcount 24
 #define SYS_halt  25
+#define SYS_setseed 26
 #define SYS_random 27
