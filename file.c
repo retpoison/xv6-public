@@ -10,6 +10,8 @@
 #include "sleeplock.h"
 #include "file.h"
 
+uint sys_read_counter = 0;
+
 struct devsw devsw[NDEV];
 struct {
 	struct spinlock lock;
@@ -153,4 +155,17 @@ filewrite(struct file *f, char *addr, int n)
 		return i == n ? n : -1;
 	}
 	panic("filewrite");
+}
+
+int
+addreadcount(void)
+{
+	sys_read_counter++;
+	return 0;
+}
+
+int
+getreadcount(void)
+{
+	return sys_read_counter;
 }

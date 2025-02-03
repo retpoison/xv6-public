@@ -443,3 +443,16 @@ sys_pipe(void)
 	fd[1] = fd1;
 	return 0;
 }
+
+int
+sys_addreadcount(void)
+{
+	addreadcount();
+	return 0;
+}
+
+int
+sys_getreadcount(void)
+{
+	return getreadcount();
+}
