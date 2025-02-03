@@ -42,3 +42,5 @@ void *memset(void *, int, uint);
 void *malloc(uint);
 void free(void *);
 int atoi(const char *);
+void itoa(long int, char *, int);
+void reverse(char *, int);
