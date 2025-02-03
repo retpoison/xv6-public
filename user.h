@@ -1,6 +1,8 @@
 struct stat;
 struct rtcdate;
 
+#define SFILE "rseed"
+
 // system calls
 int fork(void);
 int exit(void) __attribute__((noreturn));
@@ -29,6 +31,7 @@ int getreadcount(void);
 void halt(void);
 void setseed(unsigned long int);
 int random(void);
+int uartchars(void);
 
 // ulib.c
 int stat(const char *, struct stat *);

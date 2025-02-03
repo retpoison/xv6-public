@@ -26,3 +26,4 @@
 #define SYS_halt  25
 #define SYS_setseed 26
 #define SYS_random 27
+#define SYS_uartchars 28

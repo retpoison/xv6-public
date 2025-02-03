@@ -175,6 +175,7 @@ extern struct spinlock tickslock;
 void uartinit(void);
 void uartintr(void);
 void uartputc(int);
+extern unsigned long int chars;
 
 // vm.c
 void seginit(void);

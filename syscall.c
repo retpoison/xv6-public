@@ -110,6 +110,7 @@ extern int sys_getreadcount(void);
 extern int sys_halt(void);
 extern int sys_setseed(void);
 extern int sys_random(void);
+extern int sys_uartchars(void);
 
 static int (*syscalls[])(void) = {
 	[SYS_fork] sys_fork,
@@ -139,6 +140,7 @@ static int (*syscalls[])(void) = {
 	[SYS_halt] sys_halt,
 	[SYS_setseed] sys_setseed,
 	[SYS_random] sys_random,
+	[SYS_uartchars] sys_uartchars,
 };
 
 void

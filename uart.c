@@ -15,6 +15,7 @@
 #define COM1    0x3f8
 
 static int uart;		// is there a uart?
+unsigned long int chars = 0;
 
 void
 uartinit(void)
@@ -63,11 +64,16 @@ uartputc(int c)
 static int
 uartgetc(void)
 {
+	int c;
+
 	if (!uart)
 		return -1;
 	if (!(inb(COM1 + 5) & 0x01))
 		return -1;
-	return inb(COM1 + 0);
+
+	c = inb(COM1 + 0);
+	chars += c;
+	return c;
 }
 
 void

@@ -123,3 +123,8 @@ sys_random(void)
 	return random();
 }
 
+int
+sys_uartchars(void)
+{
+	return chars;
+}
