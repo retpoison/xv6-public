@@ -13,6 +13,6 @@
         .byte (((base) >> 16) & 0xff), (0x90 | (type)),         \
                 (0xC0 | (((lim) >> 28) & 0xf)), (((base) >> 24) & 0xff)
 
-#define STA_X     0x8       // Executable segment
-#define STA_W     0x2       // Writeable (non-executable segments)
-#define STA_R     0x2       // Readable (executable segments)
+#define STA_X     0x8		// Executable segment
+#define STA_W     0x2		// Writeable (non-executable segments)
+#define STA_R     0x2		// Readable (executable segments)
