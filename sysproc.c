@@ -91,6 +91,13 @@ sys_uptime(void)
 }
 
 int
+sys_pname(void)
+{
+	pname();
+	return 0;
+}
+
+int
 sys_halt(void)
 {
 	//cleanup();

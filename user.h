@@ -23,6 +23,7 @@ int getpid(void);
 char *sbrk(int);
 int sleep(int);
 int uptime(void);
+int pname(void);
 int addreadcount(void);
 int getreadcount(void);
 void halt(void);
