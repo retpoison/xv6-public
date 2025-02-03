@@ -12,6 +12,11 @@ struct {
 	struct proc proc[NPROC];
 } ptable;
 
+struct {
+	struct spinlock lock;
+	int next;
+} randomst;
+
 static struct proc *initproc;
 
 static char *states[] = {
@@ -565,3 +570,20 @@ pname(void)
 	return 0;
 }
 
+void
+rinit(void)
+{
+	initlock(&randomst.lock, "randomst");
+}
+
+int
+random(void)
+{
+	int r;
+
+	acquire(&randomst.lock);
+	randomst.next = randomst.next * 1103515245 + 12345;
+	r = (unsigned int)(randomst.next / 65536) % 32768;
+	release(&randomst.lock);
+	return r;
+}

@@ -108,6 +108,7 @@ extern int sys_pname(void);
 extern int sys_addreadcount(void);
 extern int sys_getreadcount(void);
 extern int sys_halt(void);
+extern int sys_random(void);
 
 static int (*syscalls[])(void) = {
 	[SYS_fork] sys_fork,
@@ -135,6 +136,7 @@ static int (*syscalls[])(void) = {
 	[SYS_addreadcount] sys_addreadcount,
 	[SYS_getreadcount] sys_getreadcount,
 	[SYS_halt] sys_halt,
+	[SYS_random] sys_random,
 };
 
 void

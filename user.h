@@ -27,6 +27,7 @@ int pname(void);
 int addreadcount(void);
 int getreadcount(void);
 void halt(void);
+int random(void);
 
 // ulib.c
 int stat(const char *, struct stat *);

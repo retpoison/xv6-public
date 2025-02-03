@@ -106,3 +106,9 @@ sys_halt(void)
 	return 0;
 }
 
+int
+sys_random(void)
+{
+	return random();
+}
+
