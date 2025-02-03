@@ -1,3 +1,60 @@
+Bin(?)
+------
+
+rcount: 
+calls getreadcount syscall
+from this link:
+https://github.com/remzi-arpacidusseau/ostep-projects/tree/master/initial-xv6
+
+poweroff:
+calls halt syscall
+
+uptime:
+uptime of OS
+
+pname:
+calls pname syscall
+
+rand:
+call random syscall
+
+randinit:
+read rseed file content and calls setseed syscall
+
+saveseed:
+save seed to rseed file
+(seed is the sum of uptime syscall and uartchars syscall)
+
+
+Syscalls
+--------
+
+addreadcount, getreadcount:
+counting read() syscall calls
+
+halt:
+for powering off
+
+pname:
+print running processes information
+
+rinit:
+initialize random struct lock
+
+random:
+return random number
+(from https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf, page 347)
+
+setseed:
+set seed for random struct (randomst)
+
+uartchars:
+return the sum of characters that user typed
+
+
+Main README
+-----------
+
 NOTE: we have stopped maintaining the x86 version of xv6, and switched
 our efforts to the RISC-V version
 (https://github.com/mit-pdos/xv6-riscv.git)
